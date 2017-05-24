@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AutoTweet</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+			<p></p>
+			<div class="row">
+			  <div class="col-sm-4"></div>
+				<div class="col-sm-4 well">
+          <h3 id='title'></h3>
+						<form target="_blank" accept-charset="UTF-8" action="https://twitter.com/intent/tweet" method="get">
+							<label id="cntlabel" for="cnt"></label>
+						  <div class="input-group">
+      					<input type="text" class="form-control" value="3" id="cnt">
+      					  <span class="input-group-btn">
+        				    <button class="btn btn-primary" type="button" id="shuffle">Fetch</button>
+                  </span>
+              </div><!-- /input-group -->
+              <p></p>
+              <label for='msg'>Tweet: </label>
+							<textarea class="form-control" id="text" name="text" rows="5"></textarea>
+							<h6 class="pull-right" id="count_message"></h6>
+              <input class="form-control" type="submit" value="Send!">
+						</form>
+				</div>
+			</div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

@@ -533,21 +533,18 @@ function getRandomSubarray(arr, size) {
     return shuffled.slice(0, size);
 }
 
-var text_max = 140;
-
+var MAXLEN = 140;
 accounts = Object.values(mep);
+
 $('#text').val(getRandomSubarray(accounts, 3).join(' '));
-$('#count_message').html(text_max-$('#text').val().length + ' characters left');
+$('#count_message').html(MAXLEN - twttr.txt.getTweetLength($('#text').val()) + ' characters left');
 $('#cntlabel').text('Number of accounts to fetch from ' + accounts.length + ' MEPs: ');
 
 $('#text').keyup(function() {
-  var text_length = $('#text').val().length;
-  var text_remaining = text_max - text_length;
-
-  $('#count_message').html(text_remaining + ' characters left');
+  $('#count_message').html(MAXLEN - twttr.txt.getTweetLength($('#text').val()) + ' characters left');
 });
 
 $('#shuffle').click(function() {
   $('#text').val(getRandomSubarray(accounts, $('#cnt').val()).join(' '));
-  $('#count_message').html(text_max-$('#text').val().length + ' characters left');
+  $('#count_message').html(MAXLEN - twttr.txt.getTweetLength($('#text').val()) + ' characters left');
 })

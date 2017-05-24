@@ -534,7 +534,7 @@ function getRandomSubarray(arr, size) {
 }
 
 var MAXLEN = 140;
-accounts = Object.values(mep);
+accounts = $.map(mep, function(value, key) {return value});
 
 $('#text').val(getRandomSubarray(accounts, 3).join(' '));
 $('#count_message').html(MAXLEN - twttr.txt.getTweetLength($('#text').val()) + ' characters left');
